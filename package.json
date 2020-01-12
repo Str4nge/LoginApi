@@ -1,0 +1,28 @@
+{
+  "name": "login-api",
+  "version": "1.0.0",
+  "description": "Simple Rest api for Login system",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start" : "env-cmd -f ./.env nodemon src/index.js"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "api",
+    "mongodb"
+  ],
+  "author": "Dr. Strange",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "env-cmd": "^10.0.1",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^3.4.1",
+    "mongoose": "^5.8.7",
+    "nodemon": "^2.0.2",
+    "validator": "^12.1.0"
+  }
+}
