@@ -33,6 +33,15 @@ const userSchema = mongoose.Schema({
             type: String,
             required: true
         }
+    }],
+    shared_posts:[{
+        post_id:{
+            type:String,
+            required:true
+        },
+        post_owner:{
+            type:String,
+        }
     }]
 });
 

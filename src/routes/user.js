@@ -37,8 +37,18 @@ router.post('/login', async (req, res) => {
 
 //Route to see logged in user profile
 router.get('/profile',auth,async (req,res)=>{
-    res.send(req.user.toString());
+    res.send(req.user);
+    const New = await User.aggregate([
+        {$match:{name:'John doe'}},
+        {$project:{name:1,_id:0}}
+    ]);
+    console.log(New)
 });
 
-
+router.post('/share',auth,async (req,res)=>{
+    const user = req.user;
+    user.shared_posts = user.shared_posts.concat({post_id:user._id,post_owner:user.name});
+    user.save();
+    res.send(user);
+});
 module.exports = router;
